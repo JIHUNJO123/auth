@@ -1,45 +1,48 @@
-# SafeVault - Capstone Project
+SafeVault - A Capstone Project
+SafeVault is a secure web application built with Flask, designed to demonstrate essential security practices. The project showcases the implementation of input validation, SQL injection prevention, secure authentication, and Role-Based Access Control (RBAC).
 
-A secure Flask web application demonstrating input validation, SQL injection prevention, authentication, and Role-Based Access Control (RBAC).
+Core Features
+Secure Authentication: Manages user login, logout, and sessions securely.
 
-## Features
+Password Encryption: Utilizes Werkzeug's robust library for hashing and securing user passwords.
 
-- **Secure User Authentication:** Login/Logout with session management.
-- **Password Hashing:** Uses Werkzeug's secure password hashing.
-- **Input Validation:** Validates usernames and form data.
-- **SQL Injection Prevention:** Uses parameterized queries exclusively.
-- **XSS Prevention:** User input is escaped in Jinja2 templates.
-- **Role-Based Access Control (RBAC):** Implements an `@admin_required` decorator.
-- **Database:** SQLite for simplicity.
+Input Validation: Enforces validation rules for usernames and all other form data.
 
-## Setup
+SQL Injection Defense: Protects the database by using parameterized queries exclusively.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <your-github-repo-url>
-    cd safevault-capstone
-    ```
+XSS Mitigation: Prevents Cross-Site Scripting attacks by automatically escaping user input in Jinja2 templates.
 
-2.  **Create a virtual environment and install dependencies:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
+Role-Based Access Control (RBAC): Implements an @admin_required decorator to restrict access to sensitive areas.
 
-3.  **Run the application:**
-    ```bash
-    python app.py
-    ```
-    The app will be available at `http://127.0.0.1:5000`.
+Database: Employs SQLite for simplified database management.
 
-## Test Logins
+Installation and Setup
+Clone the project repository:
 
-- **Admin User:** username: `admin`, password: `adminpass`
-- **Regular User:** username: `user`, password: `userpass`
+Bash
 
-You can also register new users (who will have the 'user' role by default).
+git clone <your-github-repo-url>
+cd safevault-capstone
+Create a virtual environment and install packages:
 
-## How Copilot Assisted
+Bash
 
-Copilot was used to generate secure code patterns, such as parameterized SQL queries, password hashing functions, and the RBAC decorator structure. It also helped quickly generate boilerplate code for Flask routes and HTML templates, allowing a focus on implementing security features.
+python -m venv venv
+source venv/bin/activate  # For Windows: venv\Scripts\activate
+pip install -r requirements.txt
+Launch the application:
+
+Bash
+
+python app.py
+The application will then be running at http://127.0.0.1:5000.
+
+Sample Credentials
+Administrator: username: admin, password: adminpass
+
+Standard User: username: user, password: userpass
+
+You can also register new accounts, which are assigned the 'user' role by default.
+
+AI-Assisted Development
+GitHub Copilot was utilized to accelerate development by generating secure code patterns for features like parameterized SQL queries, password hashing, and the RBAC decorator. It also helped scaffold boilerplate code for Flask routes and HTML templates, allowing for a greater focus on implementing and refining the core security features.
