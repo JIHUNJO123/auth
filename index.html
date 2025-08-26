@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to SafeVault</h1>
+<p class="lead">A secure application to store your sensitive data.</p>
+{% if not session.user_id %}
+<p>Please <a href="{{ url_for('login') }}">login</a> or <a href="{{ url_for('register') }}">register</a> to get started.</p>
+{% endif %}
+{% endblock %}

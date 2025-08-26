@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard - All User Data</h2>
+<p class="text-muted">This page is protected by Role-Based Access Control (RBAC).</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in all_data %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.username }}</td>
+            <!-- XSS PREVENTION: The 'item.data' is automatically escaped by Jinja2 -->
+            <td>{{ item.data }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3" class="text-center">No data found in the vault.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
