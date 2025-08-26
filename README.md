@@ -1,48 +1,67 @@
-SafeVault - A Capstone Project
-SafeVault is a secure web application built with Flask, designed to demonstrate essential security practices. The project showcases the implementation of input validation, SQL injection prevention, secure authentication, and Role-Based Access Control (RBAC).
+🛡️ SafeVault - Capstone Project
+SafeVault is a secure web application developed with the Flask framework, created as a capstone project to demonstrate essential web security practices.
 
-Core Features
-Secure Authentication: Manages user login, logout, and sessions securely.
+This project clearly showcases the implementation of input validation, SQL injection prevention, secure user authentication, and Role-Based Access Control (RBAC).
 
-Password Encryption: Utilizes Werkzeug's robust library for hashing and securing user passwords.
+🚀 Core Features
+🔐 Secure User Authentication: Provides secure login/logout functionality with session management.
 
-Input Validation: Enforces validation rules for usernames and all other form data.
+🛡️ Password Encryption: Protects user passwords with a strong hashing algorithm using the Werkzeug library.
 
-SQL Injection Defense: Protects the database by using parameterized queries exclusively.
+📝 Input Validation: Prevents invalid data by validating usernames and all other form submissions.
 
-XSS Mitigation: Prevents Cross-Site Scripting attacks by automatically escaping user input in Jinja2 templates.
+💉 SQL Injection Prevention: Secures the database from SQL injection attacks by exclusively using parameterized queries.
 
-Role-Based Access Control (RBAC): Implements an @admin_required decorator to restrict access to sensitive areas.
+⚔️ XSS Prevention: Mitigates Cross-Site Scripting (XSS) attacks through the auto-escaping feature of Jinja2 templates.
 
-Database: Employs SQLite for simplified database management.
+👑 Role-Based Access Control (RBAC): Restricts access to admin-only pages by implementing an @admin_required decorator.
 
-Installation and Setup
-Clone the project repository:
+🗂️ Database: Uses the simple and convenient SQLite.
+
+🛠️ Installation and Setup
+Clone the Project Repository
 
 Bash
 
 git clone <your-github-repo-url>
 cd safevault-capstone
-Create a virtual environment and install packages:
+Create a Virtual Environment and Install Dependencies
 
 Bash
 
+# Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
+
+# Activate the virtual environment (For Windows, use: venv\Scripts\activate)
+source venv/bin/activate
+
+# Install the required packages
 pip install -r requirements.txt
-Launch the application:
+Run the Application
 
 Bash
 
 python app.py
-The application will then be running at http://127.0.0.1:5000.
+After running, you can access the application by navigating to http://127.0.0.1:5000 in your web browser.
 
-Sample Credentials
-Administrator: username: admin, password: adminpass
+🧪 Test Credentials
+The following two accounts have been pre-configured to allow for testing the different roles.
 
-Standard User: username: user, password: userpass
+Administrator (Admin)
 
-You can also register new accounts, which are assigned the 'user' role by default.
+Username: admin
 
-AI-Assisted Development
-GitHub Copilot was utilized to accelerate development by generating secure code patterns for features like parameterized SQL queries, password hashing, and the RBAC decorator. It also helped scaffold boilerplate code for Flask routes and HTML templates, allowing for a greater focus on implementing and refining the core security features.
+Password: adminpass
+
+Standard User (User)
+
+Username: user
+
+Password: userpass
+
+You can also register new users through the sign-up page. Newly registered users are assigned the 'user' role by default.
+
+✨ AI-Assisted Development (How Copilot Assisted)
+This project was developed with the assistance of GitHub Copilot. Copilot was utilized to generate secure code patterns, such as parameterized SQL queries, password hashing functions, and the structure for the RBAC decorator.
+
+It also helped to quickly write boilerplate code for Flask routes and HTML templates, which allowed for a greater focus on implementing and refining the core security features.
